@@ -1,0 +1,43 @@
+import React from 'react';
+import {csv} from 'd3-fetch';
+import ScatterOrdinal from './../Components/ScatterOrdinal';
+
+import Emploi from './../data/emploi.csv';
+
+import {
+  cleanDataEmploi,
+  cleanDataTourisme,
+  generateItemsScatterplot
+} from './../utils';
+
+
+export default class ScatterPlotEmploi extends React.Component {
+
+	
+	constructor(props) {
+        super(props)
+        this.state = {
+            dataEmploi: []
+        };
+    }
+	
+	componentDidMount() {
+
+		csv(Emploi)
+				.then(data => {
+					const updatedDataEmploi = cleanDataEmploi(data);	
+					//console.log(updatedDataEmploi);
+				
+					this.setState({
+						dataEmploi: updatedDataEmploi
+					});
+			});
+	}
+	
+	render() {
+		return (
+			<ScatterOrdinal data={this.state.dataEmploi}/>
+		);
+	}
+	
+}

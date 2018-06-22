@@ -1,0 +1,139 @@
+import React from 'react';
+import {csv} from 'd3-fetch';
+import ScatterOrdinal from './../Components/ScatterOrdinal';
+import ChartTitle from './../Components/ChartTitle';
+
+import Emploi from './../data/emploi-secteur.csv';
+
+import {
+	marginleft_chartprops,
+	secteurINSEE,
+	DepartementsPSN
+} from './../constants';
+
+import {
+  cleanDataEmploi,
+  generateItemsScatterplot,
+  filterDataScatterplot,
+  generateCheckBox,
+  conditionsFromCheckboxes
+} from './../utils';
+
+const title = {
+		main: "Nombre d'emploi salarié par secteur et par département",
+		sub: '',
+		p:'2015 - INSEE'
+}
+
+function renderCheckboxesDepartement() {
+    const checkboxes = this.state.checkboxesDepartement;
+
+    return checkboxes
+        .map((checkbox, index) =>
+            <div>
+                <label className="container">
+                    <input
+                        type="checkbox"
+                        checked={checkbox.checked}
+                        onChange={toggleCheckbox.bind(this, index, 'Departement')}
+                    />
+                    <span className="checkmark"></span>
+                    {checkbox.label}
+                </label>
+            </div>
+        );
+}
+
+function renderCheckboxesSecteur() {
+    const checkboxes = this.state.checkboxesSecteur;
+
+    return checkboxes
+        .map((checkbox, index) =>
+            <div>
+                <label className="container">
+                    <input
+                        type="checkbox"
+                        checked={checkbox.checked}
+                        onChange={toggleCheckbox.bind(this, index, 'Secteur')}
+                    />
+                     <span className="checkmark"></span>
+                    {checkbox.label}
+                </label>
+            </div>
+        );
+}
+
+function toggleCheckbox(index,categorie) {
+
+	switch (categorie) {
+		case 'Departement':
+			const checkboxesDepartement = this.state.checkboxesDepartement;
+		    checkboxesDepartement[index].checked = !checkboxesDepartement[index].checked;
+		    this.setState({
+				checkboxesDepartement: checkboxesDepartement
+			});
+		    break;
+		case 'Secteur':
+			const checkboxesSecteur = this.state.checkboxesSecteur;
+		    checkboxesSecteur[index].checked = !checkboxesSecteur[index].checked;
+		    this.setState({
+				checkboxesSecteur: checkboxesSecteur
+			});
+		    break;
+	}
+}
+
+export default class ScatterPlotEmploi extends React.Component {
+
+	constructor(props) {
+        super(props)
+        this.state = {
+            dataEmploi: [],
+            checkboxesDepartement: generateCheckBox(DepartementsPSN),
+            checkboxesSecteur: generateCheckBox(secteurINSEE)
+        };
+    }
+
+	componentDidMount() {
+
+		csv(Emploi)
+				.then(data => {
+					const cDataEmploi = cleanDataEmploi(data);
+					console.log(cDataEmploi);
+									
+					const updatedDataEmploi = generateItemsScatterplot(cDataEmploi, 'Departement', 'Secteur', 'Emploi')	
+					//console.log(updatedDataEmploi);
+				
+					this.setState({
+						dataEmploi: updatedDataEmploi
+					});
+					
+			});
+	}
+	
+	render() {
+		return (
+			<div>
+				<ChartTitle title={title}/>
+				<ScatterOrdinal 
+					chartProps={marginleft_chartprops} 
+					chartType={ {yType:"ordinal", xType:"ordinal"}} 
+					data={
+						filterDataScatterplot(
+							this.state.dataEmploi,
+							conditionsFromCheckboxes(this.state.checkboxesDepartement),
+							conditionsFromCheckboxes(this.state.checkboxesSecteur))
+					}/>
+					
+				<div className="checkbox-container">
+					{renderCheckboxesDepartement.call(this)}
+				</div>
+				<div className="checkbox-container">
+				{renderCheckboxesSecteur.call(this)}
+				</div>
+				
+			</div>
+		);
+	}
+	
+}

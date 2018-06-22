@@ -1,0 +1,84 @@
+import React from 'react';
+import {} from 'react-vis';
+
+import {large_chartprops} from '../constants';
+
+import Diplomes from './../data/diplomes_filtres.json';
+
+import MultipleStackedBar from './../Components/MultipleStackedBar';
+
+//FINIR FONCTION FILTRE AVEC GESTIONDES PARAMETRES
+function filterDisplayedData() {
+
+	//Filter sur la série
+	var unNiveau = Diplomes.filter(d => { return d.series === "superieur" || d.series === "niveau_BEP"});
+	
+	//Filtrer sur le département
+	var test = unNiveau.map( (d, idx) => {
+		var values = [];
+		
+		d.values.forEach( (item) => { 
+
+			if(item.x === 'Calvados' ) { 
+				values.push(item) ;
+				//console.log(item.x); 
+			} 
+		});
+		
+		return {"series":d.series, "values": values};
+	});
+	console.log(test);
+	return test;
+
+}
+
+export default class MultStackBarDiplomes extends React.Component {
+
+	constructor(props) {
+        super(props)
+        this.state = {
+            data: Diplomes,
+            checked: false
+		}
+        
+        this.handleChange = this.handleChange.bind(this);
+
+	}
+
+	handleChange(event) {
+		this.setState({checked: event.target.checked});
+		
+		console.log(event.target.checked);
+		
+		if (event.target.checked) {
+			this.setState({data: filterDisplayedData()});
+		}
+		else {
+			this.setState({data: Diplomes});
+		}
+	}
+
+    
+
+	render() {
+
+		return (
+			<div>
+
+			<form> <label>
+		      Niveau d études: <input name="isGoing" type="checkbox" checked={this.state.checked} onChange={this.handleChange} />
+		   </label> </form>
+
+			<MultipleStackedBar
+				data={ this.state.data }
+				chartProps={ large_chartprops }
+				yaxis={{title: "Pourcentage de visiteurs étrangers"}}
+			/>
+
+				
+			</div>
+		);
+	}
+
+
+}
