@@ -2,13 +2,19 @@ import React from 'react';
 
 export default class ChartTitle extends React.Component {
 
-
     render() {
     	return (
     		<div className="Chart-header">
-				<h1> {this.props.title.main} </h1> 
-				<h3> {this.props.title.sub} </h3>
-				<p> <i> {this.props.title.p} </i></p>
+				
+				{typeof this.props.title.main !== undefined &&
+					<h1> {this.props.title.main} </h1> 
+				}
+				{typeof this.props.title.h2 !== undefined &&
+					<h2> {this.props.title.h2} </h2> 
+				}
+				{typeof this.props.title.p !== undefined &&
+					<p> <i> {this.props.title.p} </i></p> 
+				}			
 			</div>
     	);
     }

@@ -1,45 +1,40 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'react-vis/dist/style.css';
+import SankeyData from  './Components/SankeyData';
+import ChartComposition from  './Components/ChartComposition';
 
+import WebFont from 'webfontloader';
 
-import SankeyFlux from './Components/Sankey-flux';
-import ScatterplotEmploi from './Components/Scatterplot-emploi';
-import MultStackBarDiplomes from './Components/MultStackBar-Diplomes';
-import ScatterplotToursime from './Components/Scatterplot-Tourisme';
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 
-import {large_chartprops} from './constants';
+WebFont.load({
+  google: {
+    families: ['Libre+Franklin:bold', 'Montserrat']
+  },
+	typekit: {
+    id: 'myriad-pro'
+  }
+});
 
 
 
 class App extends Component {
-  
 
   render() {
 
   	
     return (
 		<div className="App">
-
-
-			<ScatterplotEmploi /> 
-			{/*
 			
-			<SankeyFlux />
-			
-			
-			<MultStackBarDiplomes />
-			
-			<ScatterplotToursime/>
-
-			
-
+			  <BrowserRouter basename={process.env.PUBLIC_URL}>
+				<div>
+					<Route exact path="/" component={ChartComposition}/>
+					<Route path="/data" component={SankeyData}/>
+				</div>
+				</BrowserRouter>
 			
 			
-			*/}
-			
-			
-
 
 		</div>
 

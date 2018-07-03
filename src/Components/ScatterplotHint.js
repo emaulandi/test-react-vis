@@ -1,6 +1,6 @@
 import React from 'react';
 import {XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, MarkSeries, Hint} from 'react-vis';
-
+import CustomAxisLabel from './../Components/CustomAxisLabel';
 
 export default class ScatterplotHint extends React.Component {
 
@@ -17,30 +17,34 @@ export default class ScatterplotHint extends React.Component {
 		  return null;
 		}
 		
-		const hintValue = {
-			Departement: activeNode.dep,
-			Nuites: activeNode.size
-		}
+		const hintValue = this.props.hintValueFunction(activeNode);
 
 		return (
-		  <Hint x={activeNode.x} y={activeNode.y} value={hintValue} />
+		  <Hint className='Hint' x={activeNode.x} y={activeNode.y} value={hintValue} />
 		);
 	}
 
     render() {
     	return (
+				<div>
 	        <XYPlot 
 	        	{...this.props.colorProps} 
 	        	{...this.props.chartProps}
+						{...this.props.chartType}
 	        	{...this.props.scaleProps}
 	        	>
 			
 				<VerticalGridLines />
 				<HorizontalGridLines />
 				<XAxis tickLabelAngle={this.props.tickAngle} />
-				<YAxis tickFormat={v => `${v}` + this.props.suffixY} />
+				{ typeof this.props.axisProps !== 'undefined' &&
+					<YAxis tickFormat={v => v + this.props.suffixY} />
+				}
+				{ typeof this.props.axisProps === 'undefined' &&
+					<YAxis />
+				}
 			
-			  	<MarkSeries
+			  <MarkSeries
 					sizeRange={this.props.sizeRange}
 					data={ this.props.data }
 					onValueMouseOver={(d, {event}) => {
@@ -50,8 +54,15 @@ export default class ScatterplotHint extends React.Component {
 				/>
 			
 				{ this._renderHint() }
-				
+
+				{ this.props.axisProps !== null &&
+						<CustomAxisLabel axis={this.props.axisProps}/>
+				}
+					
 			</XYPlot>
+			
+
+		</div>
 		);
     }
 }

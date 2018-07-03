@@ -1,7 +1,7 @@
 import React from 'react';
-import {XYPlot, XAxis, YAxis,  VerticalBarSeries, HorizontalGridLines, VerticalGridLines } from 'react-vis';
+import {XYPlot, XAxis, YAxis,  BarSeries, HorizontalGridLines, VerticalGridLines } from 'react-vis';
 
-export default class MultipleStackedBar extends React.Component {
+export default class HorizontalStackBar extends React.Component {
 
 	render() {
 
@@ -11,21 +11,20 @@ export default class MultipleStackedBar extends React.Component {
 				{...this.props.chartProps}
 				{...this.props.scaleProps}
 				stackBy="y"
-        		xType="ordinal">
+        yType="ordinal">
 			
         <HorizontalGridLines />
 				<VerticalGridLines />
 
-			  <XAxis tickLabelAngle={-30} />
+			  <XAxis/>
 				<YAxis/>
 			{
 				this.props.data.map((d, idx) => {
 					
 					return (
-						<VerticalBarSeries 
+						<BarSeries 
 						key={idx}
 						data={d.values}
-						color={d.color}
 						/>
 					);
 				})

@@ -1,81 +1,124 @@
 import React from 'react';
 import {} from 'react-vis';
+import {csv} from 'd3-fetch';
+import {DiscreteColorLegend} from 'react-vis';
 
-import {large_chartprops} from '../constants';
+import {
+	marginleft_chartprops,
+	niveauDiplomeINSEE
+} from '../constants';
 
-import Diplomes from './../data/diplomes_filtres.json';
+import Diplomes from './../data/INSEE_diplomes_2014_extract.csv';
+
+import {
+  filterSeries,
+  generateCheckBox,
+  conditionsFromCheckboxes,
+	cleanDataDiplome,
+	generateSeries
+} from './../utils';
 
 import MultipleStackedBar from './../Components/MultipleStackedBar';
+import ChartTitle from './../Components/ChartTitle';
+import SourceLink from './../Components/SourceLink';
 
-//FINIR FONCTION FILTRE AVEC GESTIONDES PARAMETRES
-function filterDisplayedData() {
-
-	//Filter sur la série
-	var unNiveau = Diplomes.filter(d => { return d.series === "superieur" || d.series === "niveau_BEP"});
-	
-	//Filtrer sur le département
-	var test = unNiveau.map( (d, idx) => {
-		var values = [];
-		
-		d.values.forEach( (item) => { 
-
-			if(item.x === 'Calvados' ) { 
-				values.push(item) ;
-				//console.log(item.x); 
-			} 
-		});
-		
-		return {"series":d.series, "values": values};
-	});
-	console.log(test);
-	return test;
-
+const title = {
+		main: "Répartition des 16 - 24 ans par niveau de diplômes"
 }
+
+const sourceLink = {
+	label: 'Source : INSEE - 2014',
+	link: 'https://www.insee.fr/fr/statistiques/3524476?sommaire=3202716#consulter'
+};
+
+function renderCheckboxesDiplome() {
+	const checkboxes = this.state.checkboxesDiplome;
+	return checkboxes
+			.map((checkbox, index) =>
+					<div key={'divCheckboxeDiplome' + index}>
+							<label className="container">
+									<input
+											type="checkbox"
+											checked={checkbox.checked}
+											onChange={toggleCheckbox.bind(this, index, 'Diplome')}
+									/>
+									 <span className="checkmark"></span>
+									{checkbox.label}
+							</label>
+					</div>
+			);
+}
+
+function toggleCheckbox(index,categorie) {
+
+	switch (categorie) {
+		case 'Diplome':
+			const checkboxesDiplome = this.state.checkboxesDiplome;
+				checkboxesDiplome[index].checked = !checkboxesDiplome[index].checked;
+				this.setState({
+				checkboxesDiplome: checkboxesDiplome
+			});
+				break;
+	}
+}
+
+const standardColor = ['#12939A','#79C7E3', '#1A3177', '#FF9833', '#EF5D28'];
 
 export default class MultStackBarDiplomes extends React.Component {
 
 	constructor(props) {
         super(props)
         this.state = {
-            data: Diplomes,
-            checked: false
+            data: [],
+            checkboxesDiplome: generateCheckBox(niveauDiplomeINSEE)
 		}
-        
-        this.handleChange = this.handleChange.bind(this);
-
+  
 	}
+	
+	componentDidMount() {
 
-	handleChange(event) {
-		this.setState({checked: event.target.checked});
-		
-		console.log(event.target.checked);
-		
-		if (event.target.checked) {
-			this.setState({data: filterDisplayedData()});
-		}
-		else {
-			this.setState({data: Diplomes});
-		}
+		csv(Diplomes)
+				.then(data => {
+					const cDataDiplome = cleanDataDiplome(data);
+					//console.log(cDataDiplome);
+					
+					const updatedDataDiplome = generateSeries(cDataDiplome,standardColor)	
+					//console.log(updatedDataDiplome);
+					
+					this.setState({
+						data: updatedDataDiplome
+					});
+					
+			});
 	}
-
-    
 
 	render() {
 
 		return (
 			<div>
+				<ChartTitle title={title}/>
 
-			<form> <label>
-		      Niveau d études: <input name="isGoing" type="checkbox" checked={this.state.checked} onChange={this.handleChange} />
-		   </label> </form>
+				<MultipleStackedBar
+					chartProps={ marginleft_chartprops }
+					yaxis={{title: ""}}
+					scaleProps= { {yDomain: [0, 100] } }
+					data={filterSeries(this.state.data,conditionsFromCheckboxes(this.state.checkboxesDiplome))} 
+				/>
 
-			<MultipleStackedBar
-				data={ this.state.data }
-				chartProps={ large_chartprops }
-				yaxis={{title: "Pourcentage de visiteurs étrangers"}}
-			/>
-
+				<DiscreteColorLegend
+				orientation="horizontal"
+				width={marginleft_chartprops.width}
+				items={
+					this.state.data.map(d => d.series)
+				}
+				/>
 				
+				<SourceLink data={sourceLink}/>
+
+				<div className="checkbox-container">
+					{renderCheckboxesDiplome.call(this)}
+				</div>
+
 			</div>
 		);
 	}
