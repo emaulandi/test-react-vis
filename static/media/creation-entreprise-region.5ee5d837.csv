@@ -1,0 +1,14 @@
+RegionID,Region,Nombre de créations d'entreprises,Part de l'industrie,Part de la construction,"Part du commerce, transport, hébergement, restauration",Part des services aux entreprises,Part des services aux particuliers
+84,Auvergne-Rhône-Alpes,64945,5,12,27,32,24
+27,Bourgogne-Franche-Comté,15704,6,13,30,27,25
+53,Bretagne,18880,7,11,25,31,26
+24,Centre-Val de Loire,14412,5,13,29,29,24
+94,Corse,3774,6,18,27,28,22
+44,Grand Est,31014,6,12,30,28,24
+32,Hauts-de-France,32895,6,11,32,29,23
+11,Île-de-France,162155,3,8,30,43,17
+28,Normandie,18112,5,13,29,28,25
+75,Nouvelle-Aquitaine,46061,5,12,29,30,24
+76,Occitanie,52545,5,14,30,28,23
+52,Pays de la Loire,21963,6,10,26,34,25
+93,Provence-Alpes-Côte d'Azur,55878,4,14,28,32,21
