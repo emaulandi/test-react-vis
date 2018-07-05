@@ -1,0 +1,13 @@
+RegionID,Region,effectif_total_public,depenses_millions_euros_public,effectif_total_prive,depenses_millions_euros_prive
+84,Auvergne-Rhône-Alpes,21304,2132,36944,4483
+27,Bourgogne-Franche-Comté,3204,270,8381,1042
+53,Bretagne,6850,661,9185,1069
+24,Centre-Val de Loire,3445,309,6877,837
+44,Grand Est,10279,924,9775,1070
+32,Hauts-de-France,7112,604,8966,1055
+11,Île-de-France,56671,5953,99171,13073
+28,Normandie,3641,289,7447,955
+75,Nouvelle-Aquitaine,9329,823,11465,1387
+76,Occitanie,20354,2232,25003,3359
+52,Pays de la Loire,5525,461,8741,803
+93,Provence-Alpes-Côte d'Azur (*),13495,1438,15891,1984
