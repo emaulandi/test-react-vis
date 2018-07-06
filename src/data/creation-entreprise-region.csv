@@ -1,19 +1,14 @@
 RegionID,Region,Nombre de créations d'entreprises,Part de l'industrie,Part de la construction,"Part du commerce, transport, hébergement, restauration",Part des services aux entreprises,Part des services aux particuliers
-84,Auvergne-Rhône-Alpes,64945,5.0,11.7,26.8,32.4,24.1
-27,Bourgogne-Franche-Comté,15704,5.9,12.7,29.9,26.6,24.9
-53,Bretagne,18880,6.6,11.4,25.2,31.3,25.5
-24,Centre-Val de Loire,14412,5.3,13.1,28.5,29.3,23.8
-94,Corse,3774,5.6,17.9,26.7,28.1,21.6
-44,Grand Est,31014,5.7,12.0,29.6,28.4,24.3
-32,Hauts-de-France,32895,5.6,11.0,31.6,28.8,23.0
-11,Île-de-France,162155,2.5,7.8,30.2,42.7,16.8
-28,Normandie,18112,5.2,12.7,29.4,28.2,24.5
-75,Nouvelle-Aquitaine,46061,5.3,12.0,28.6,30.0,24.1
-76,Occitanie,52545,5.0,14.0,29.6,28.2,23.2
-52,Pays de la Loire,21963,5.7,10.1,25.5,34.3,24.5
-93,Provence-Alpes-Côte d'Azur,55878,4.2,14.3,28.3,31.8,21.4
-01,Guadeloupe,4098,5.8,10.4,35.5,29.7,18.6
-02,Martinique,3209,5.5,11.4,32.6,30.3,20.2
-03,Guyane,1505,7.6,17.8,31.8,27.6,15.2
-04,La Réunion,6084,5.8,12.2,34.9,25.0,22.1
-06,Mayotte,797,4.6,12.2,60.9,11.4,10.9
+84,Auvergne-Rhône-Alpes,64945,5,12,27,32,24
+27,Bourgogne-Franche-Comté,15704,6,13,30,27,25
+53,Bretagne,18880,7,11,25,31,26
+24,Centre-Val de Loire,14412,5,13,29,29,24
+94,Corse,3774,6,18,27,28,22
+44,Grand Est,31014,6,12,30,28,24
+32,Hauts-de-France,32895,6,11,32,29,23
+11,Île-de-France,162155,3,8,30,43,17
+28,Normandie,18112,5,13,29,28,25
+75,Nouvelle-Aquitaine,46061,5,12,29,30,24
+76,Occitanie,52545,5,14,30,28,23
+52,Pays de la Loire,21963,6,10,26,34,25
+93,Provence-Alpes-Côte d'Azur,55878,4,14,28,32,21

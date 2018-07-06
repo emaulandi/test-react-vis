@@ -5,7 +5,8 @@ import {DiscreteColorLegend} from 'react-vis';
 
 import {
 	marginleft_chartprops,
-	niveauDiplomeINSEE
+	niveauDiplomeINSEE,
+	standardColor
 } from '../constants';
 
 import Diplomes from './../data/INSEE_diplomes_2014_extract.csv';
@@ -15,7 +16,8 @@ import {
   generateCheckBox,
   conditionsFromCheckboxes,
 	cleanDataDiplome,
-	generateSeries
+	generateSeries,
+	isPSNdep
 } from './../utils';
 
 import MultipleStackedBar from './../Components/MultipleStackedBar';
@@ -62,7 +64,10 @@ function toggleCheckbox(index,categorie) {
 	}
 }
 
-const standardColor = ['#12939A','#79C7E3', '#1A3177', '#FF9833', '#EF5D28'];
+const xyplotAxisType = {
+	stackBy: 'y',
+  xType: 'ordinal'
+};
 
 export default class MultStackBarDiplomes extends React.Component {
 
@@ -72,7 +77,6 @@ export default class MultStackBarDiplomes extends React.Component {
             data: [],
             checkboxesDiplome: generateCheckBox(niveauDiplomeINSEE)
 		}
-  
 	}
 	
 	componentDidMount() {
@@ -82,7 +86,12 @@ export default class MultStackBarDiplomes extends React.Component {
 					const cDataDiplome = cleanDataDiplome(data);
 					//console.log(cDataDiplome);
 					
-					const updatedDataDiplome = generateSeries(cDataDiplome,standardColor)	
+					const updatedDataDiplome = generateSeries(
+																			cDataDiplome.filter(d => isPSNdep(d.code_departement)),
+																			'x',
+																			'departement',
+																			niveauDiplomeINSEE,
+																			standardColor)	
 					//console.log(updatedDataDiplome);
 					
 					this.setState({
@@ -100,6 +109,7 @@ export default class MultStackBarDiplomes extends React.Component {
 
 				<MultipleStackedBar
 					chartProps={ marginleft_chartprops }
+					xyplotAxisType = {xyplotAxisType}
 					yaxis={{title: ""}}
 					scaleProps= { {yDomain: [0, 100] } }
 					data={filterSeries(this.state.data,conditionsFromCheckboxes(this.state.checkboxesDiplome))} 

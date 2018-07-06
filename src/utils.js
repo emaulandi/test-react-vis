@@ -2,13 +2,11 @@ import {
 	secteurINSEE,
 	departement_PSN_num,
 	departement_PSN,
-	niveauDiplomeINSEE,
 	month,
 	monthNum,
-	IDstationsMeteoPSN,
-	colorSankeyData,
-	colorScaleSankeyData,
-	IDregionPSN
+	IDregionPSN,
+	secteurCrea,
+	headerCreationEntreprises
 } from './constants';
 
 import React from 'react';
@@ -81,17 +79,28 @@ export function cleanDataDiplome(data) {
 		var item = {
 				"code_departement": +d.DR16,
 				"departement": d.LIBELLE16,
-				"niveau":{
-				  "Aucun ou BEPC": (d.dpx_recAs1age2_rec1rpop2014 + d.dpx_recAs2age2_rec1rpop2014)/sum,
-					"Niveau BEP": (d.dpx_recBs1age2_rec1rpop2014 + d.dpx_recBs2age2_rec1rpop2014)/sum,
-					"Niveau Baccalaureat": (d.dpx_recCs1age2_rec1rpop2014 + d.dpx_recCs2age2_rec1rpop2014)/sum,
-					"Diplome du supérieur": (d.dpx_recDs1age2_rec1rpop2014 + d.dpx_recDs2age2_rec1rpop2014)/sum
-				}
+				"Aucun ou BEPC": (d.dpx_recAs1age2_rec1rpop2014 + d.dpx_recAs2age2_rec1rpop2014)/sum * 100,
+				"Niveau BEP": (d.dpx_recBs1age2_rec1rpop2014 + d.dpx_recBs2age2_rec1rpop2014)/sum * 100,
+				"Niveau Baccalaureat": (d.dpx_recCs1age2_rec1rpop2014 + d.dpx_recCs2age2_rec1rpop2014)/sum * 100,
+				"Diplome du supérieur": (d.dpx_recDs1age2_rec1rpop2014 + d.dpx_recDs2age2_rec1rpop2014)/sum * 100
 			}
 		proportion.push(item);
 	
 	});
 	return proportion;
+}
+
+export function cleanDataRecherche(data){
+	
+	return data.map (d => {
+		// Improve with depenseRecherche? how to mix map and programmatically setted keys ? > depenseRecherche
+		return {
+			Region : d.Region,
+			RegionID : d.RegionID,
+			depenses_millions_euros_public: +d.depenses_millions_euros_public,
+			depenses_millions_euros_prive: +d.depenses_millions_euros_prive,
+		}
+	})
 }
 
 /* Clean and change data structure to fit x:Month y:value for each series : wind_max, wind_min, wind_mean*/
@@ -191,36 +200,76 @@ export function cleanDataPrecipitations(data){
 
 /* Compute actual number of enterprise creation from % of total */
 export function cleanDataCreaEntreprises(data){
-	
-	const headerCrea = ["Part de l'industrie","Part de la construction",	"Part du commerce, transport, hébergement, restauration", 
-											"Part des services aux entreprises",	"Part des services aux particuliers"];
-	const secteurCrea = ['Industrie', 'Construction', "Commerce, transport, hébergement, restauration",'Services aux entreprises','Services aux particuliers'];
-	
+	// TBD : improve with map to return only the processed attributes
 	data.forEach( d => {
 			secteurCrea.forEach( (e, idx) => {
-				d[e] = +d[headerCrea[idx]] * +d["Nombre de créations d'entreprises"] / 100;
+				d[e] = (+d[headerCreationEntreprises[idx]] /100 ) * (+d["Nombre de créations d'entreprises"]) ;
+				//console.log(+d[headerCreationEntreprises[idx]] /100);
+				//console.log(+d["Nombre de créations d'entreprises"]);
 			});
 	})
-	
-	console.log(data);
-	
-	mergeRegionPSN(data,secteurCrea);
+
+	return data ; 
 }
 
-/* From an array of region, merge idf and Normandie in PSN region */
+/* Multi attribute with value to item id / Attribute(x) / Value */
+export function deserializeMultiAttribute(data, idArray, attributesArray, newKeys){
+	
+	var flatData = [];
+	var item = {};
+	data.forEach( d => {
+		
+		//specific key-value attribute we want to deserialize
+		attributesArray.forEach( e => {
+			
+			//attribute from original data to keep for each item
+			idArray.forEach( i => {
+				item[i] = d[i];
+			})
+
+			item[newKeys[0]] = e;
+			item[newKeys[1]] = d[e];
+
+			flatData.push(item);
+			
+			item = {};
+		})
+	})
+
+	return flatData;
+	
+}
+
+/* From an array of region, merge idf and Normandie in PSN region on the attribute specified in arraMerge. 
+   Use Region & Region ID attribute to filter regions and create PSN region */
 export function mergeRegionPSN(data,arrayMerge){
+	
 	var exceptPSN = data.filter( d => {return !IDregionPSN.includes(d.RegionID)});
-	console.log(exceptPSN);
 	
 	var PSN = {
 		Region: "Vallée de Seine",
 		RegionID: "PSN"
 	};
 	
+	//for each region to sum initiate the attribute for each one
 	IDregionPSN.forEach( d => {
-		/*d[]arrayMerge*/
+		arrayMerge.forEach( e => {
+			PSN[e] = 0;
+		})
 	})
 	
+	//sum all the attribute of arrayMerg
+	data.filter( d => {return IDregionPSN.includes(d.RegionID)}).forEach( d => {
+
+		arrayMerge.forEach( (e,idx) => {
+			PSN[e] += d[e];
+		})
+	})
+	
+	exceptPSN.push(PSN);
+	
+	return exceptPSN;
+
 }
 
 // Find the the index of an element given a property key and a matching value
@@ -228,26 +277,41 @@ export function findIndex(value, key, data){
 	return data.map(function(e) { return e[key]; }).indexOf(value);
 }
 
-export function generateSeries(data, colorTab) {
+// Generate multiple series from data with given color for each series. x,y is ordinal on the given stackBy(x or y) and the id is attributed to the corresponding index (x or y), the other get the value of the series in the original data
+export function generateSeries(data, stackBy, id, arraySeries, colorTab) {
 	var seriesList = [];
 	var i,j;
 	
-	for(i=0;i<niveauDiplomeINSEE.length;i++){
+	//initiate series array
+	for(i=0;i<arraySeries.length;i++){
 		seriesList.push({
-			series: niveauDiplomeINSEE[i],
+			series: arraySeries[i],
 			values: [],
 			color: colorTab[i]
 		});
 	}
-
-	var filterPSN = data.filter(d => isPSNdep(d.code_departement));
-
-	data.filter(d => isPSNdep(d.code_departement)).forEach( d => {
-		for(j=0;j<niveauDiplomeINSEE.length;j++){
-			seriesList[j].values.push({
-				"x": d.departement,
-				"y": d.niveau[niveauDiplomeINSEE[j]] * 100
-			});
+	
+	var index1, index2 ;
+	
+	if (stackBy === 'x'){
+		index1 = 'x';
+	  index2 = 'y';
+	}
+	else {
+		index1 = 'y';
+	  index2 = 'x';
+	}
+	var e = {};
+	
+	data.forEach( d => {
+		for(j=0;j<arraySeries.length;j++){
+			
+			e[index1] = d[id];
+			e[index2] = d[arraySeries[j]];
+			
+			seriesList[j].values.push(e);
+			
+			e = {};
 		}
 	});
 	
@@ -407,7 +471,7 @@ export function isPSN(codeCommune) {
 
 export function filterSeries(data, conditionsSeries){
 	//Filtrer sur le département > pas réalisé
-	var conditionsDepartements = ['Yvelines',"Val-d'Oise",'Hauts-de-Seine','Seine-Saint-Denis','Paris','Seine-Maritime','Eure','Calvados','Manche'];
+	//var conditionsDepartements = ['Yvelines',"Val-d'Oise",'Hauts-de-Seine','Seine-Saint-Denis','Paris','Seine-Maritime','Eure','Calvados','Manche'];
 	
 	var filteredSeries = data.filter(d => { 
 		return conditionsSeries.includes(d.series)
@@ -458,6 +522,7 @@ export function conditionsFromCheckboxes(checkboxesStatus) {
 	return conditions;
 }
 
+/* Generate simple sankey data with 2 dimensions and a value key to sum for the same entries */
 export function generateSankey(data,sourceKey,sourcePrefix,targetKey,targetPrefix, valueKey){
 	//generate sankey dataset in the form of list of nodes, and list of links between them with a weight
 	//categorie_1,categorie_2
@@ -483,7 +548,6 @@ export function generateSankey(data,sourceKey,sourcePrefix,targetKey,targetPrefi
 	var uniqueTargets = [...new Set(target)];
 	
 	var sankeyNodes = uniqueNodes.map( (d) => { return {name: d} });
-	//console.log(sankeyNodes);
 	
 	// Generate list of link with unique ID
 	var tempLinks = data.map( (d) => {
@@ -521,10 +585,23 @@ export function generateSankey(data,sourceKey,sourcePrefix,targetKey,targetPrefi
 	return {
 		nodes: sankeyNodes, 
 		//Delete any links with value 0 that are still plotted as fine line
-		links: sankeyLinks.filter(d => d.value != 0)
+		links: sankeyLinks.filter(d => d.value !== 0)
 	};
 	
 	
+}
+
+/* Color all the link for which the id is the corrsponding id of the node which name is item */
+export function colorSankeyLinkSource(sankeyData, item, sourceOrTarget, color){
+	const ID = sankeyData.nodes.map(function(e) { return e.name; }).indexOf(item);
+	
+	sankeyData.links.forEach( d => {
+		if (d[sourceOrTarget] === ID){
+			d.color = color;
+		}
+	})
+	
+	return sankeyData;
 }
 
 export function arraySum(array, sumAttribute){
@@ -533,7 +610,8 @@ export function arraySum(array, sumAttribute){
 	}, 0);
 }
 
-export function generateSankey2(data,listSourceTargetKeys, colorSankey, colorDomain, colorScale, colorDefault){
+/* Generate sankey data for multiple dimensions and count how many times the given object arrise but no values count. Generate color from color function and description list if given*/
+export function generateSankey2(data,listSourceTargetKeys, colorSankey, colorScale, colorDefault, descriptionAttribute){
 	var i,description;
 	var allLinks = [];
 	
@@ -541,14 +619,24 @@ export function generateSankey2(data,listSourceTargetKeys, colorSankey, colorDom
 	// Create a list of all link (for every source / target array)
 	data.forEach( d => {
 		for (i=0; i<listSourceTargetKeys.length; i++) {
-			description = d['Description'];
-			//console.log(description);
-			allLinks.push(
-				{sourceName: d[listSourceTargetKeys[i].sourceKey] + listSourceTargetKeys[i].sourcePrefix, 
-				 targetName: d[listSourceTargetKeys[i].targetKey] + listSourceTargetKeys[i].targetPrefix,
-				 description: description
-				}
-			);
+			
+			if (descriptionAttribute !== 0){
+				description = d[descriptionAttribute];
+				//console.log(description);
+				allLinks.push(
+					{sourceName: d[listSourceTargetKeys[i].sourceKey] + listSourceTargetKeys[i].sourcePrefix, 
+					 targetName: d[listSourceTargetKeys[i].targetKey] + listSourceTargetKeys[i].targetPrefix,
+					 description: description
+					}
+				);
+			}
+			else {
+				allLinks.push(
+					{sourceName: d[listSourceTargetKeys[i].sourceKey] + listSourceTargetKeys[i].sourcePrefix, 
+					 targetName: d[listSourceTargetKeys[i].targetKey] + listSourceTargetKeys[i].targetPrefix
+					}
+				);
+			}
 		}
 	});
 	
@@ -556,19 +644,39 @@ export function generateSankey2(data,listSourceTargetKeys, colorSankey, colorDom
 	
 	// Reduce the array counting the unique values
 	var item = {};
-	var sankeyLinks = allLinks.reduce( (acc,c) => {
-		item = acc[acc.findIndex( d => { 
-					return _.isEqual(_.omit(d, ['value','descriptionList']),_.omit(c, ['description']) );
-				})
-			  ] 
-				|| 
-				acc[ acc.push({sourceName:c.sourceName, targetName: c.targetName , value:0, descriptionList:''})-1] ;
-		
-		item.value++;
-		item.descriptionList += c.description + '\n';
-		return (item, acc);
+	var sankeyLinks ;
+	//if we need to gather description list from item
+	if(descriptionAttribute !== 0){
+		sankeyLinks = allLinks.reduce( (acc,c) => {
+			item = acc[acc.findIndex( d => { 
+						return _.isEqual(_.omit(d, ['value','descriptionList']),_.omit(c, ['description']) );
+					})
+					] 
+					|| 
+					acc[ acc.push({sourceName:c.sourceName, targetName: c.targetName , value:0, descriptionList:''})-1] ;
+
+			item.value++;
+			item.descriptionList += c['description'] + '\n';
+			return (item, acc);
+		}
+		,[]) ;
 	}
-	,[]) ;
+	//else
+	else{
+		sankeyLinks = allLinks.reduce( (acc,c) => {
+			item = acc[acc.findIndex( d => { 
+						return _.isEqual(_.omit(d, ['value']),c);
+					})
+					] 
+					|| 
+					acc[ acc.push({sourceName:c.sourceName, targetName: c.targetName , value:0})-1] ;
+
+			item.value++;
+			return (item, acc);
+		}
+		,[]) ;
+	}
+	
 	
 	
 	//SIMPLE VERSION
@@ -602,26 +710,27 @@ export function generateSankey2(data,listSourceTargetKeys, colorSankey, colorDom
 
 	// LINKS 
 	// add unique ID of source and target
-	
 	sankeyLinks.forEach(d => {
 		d.source = uniqueNodes.indexOf(d.sourceName) ;
 		d.target = uniqueNodes.indexOf(d.targetName) ;
 		
-		//TBD : mieux généraliser pour autres usages ?
-		var linkColor = colorSankey(d.sourceName,colorDomain, colorScale) ;
-		var linkColorTarget = colorSankey('target:'+d.targetName,colorDomain, colorScale) ;
-		
-		// first check if there is a color rule on the source Name
-		if (linkColor != colorDefault){
-			d.color = linkColor;
-		}
-		// if not check if there is a color rule on the starget Name
-		else if (linkColorTarget != colorDefault){
-			d.color = linkColorTarget;
-		}
-		else{
-			d.color = colorDefault ;
-			//console.log(d.targetName);
+		if ( colorSankey !== 0 ){
+			//TBD : mieux généraliser pour autres usages ?
+			var linkColor = colorSankey(d.sourceName, colorScale, colorDefault) ;
+			var linkColorTarget = colorSankey('target:'+d.targetName, colorScale, colorDefault) ;
+
+			// first check if there is a color rule on the source Name
+			if (linkColor !== colorDefault){
+				d.color = linkColor;
+			}
+			// if not check if there is a color rule on the starget Name
+			else if (linkColorTarget !== colorDefault){
+				d.color = linkColorTarget;
+			}
+			else{
+				d.color = colorDefault ;
+				//console.log(d.targetName);
+			}
 		}
 
 	});
@@ -632,6 +741,16 @@ export function generateSankey2(data,listSourceTargetKeys, colorSankey, colorDom
 		links: sankeyLinks
 	};
 	
+}
+
+/* Color scale handling a given default color not in the domain of the d3 scale */
+export function getColorSankey(item, colorScale, colorDefault){
+	if (colorScale.domain().includes(item)){
+			return colorScale(item);
+	}
+	else{
+		return colorDefault;
+	}
 }
 
 export function generateSelectOption(itemArray){

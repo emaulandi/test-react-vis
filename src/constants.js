@@ -26,7 +26,7 @@ export const custom_chartprops = {
 
 export const smallSaneky_chartprops = {
 	height: 250,
-	width: 300,
+	width: 350,
 	margin: {left: 10, right: 10, top: 10, bottom: 10} 
 }
 
@@ -49,9 +49,15 @@ export const sankey_chartprops = {
 };
 
 export const large_sankey_chartprops = {
-	height: 550,
-	width: 980,
+	height: 700,
+	width: 1100,
 	margin: {left: 0, right: 0, top: 10, bottom: 10} 
+};
+
+export const medium_sankey_chartprops = {
+	height: 750,
+	width: 700,
+	margin: {left: 50, right: 50, top: 10, bottom: 10} 
 };
 
 export const colorProps = {
@@ -61,6 +67,13 @@ export const colorProps = {
 };
 
 export const colorArray = ["#79C7E3","#95C11F"];
+
+export const colorScaleSankeyEntreprises = scaleOrdinal()
+			.domain([ "Autres régions","Vallée de Seine"])
+			.range(colorArray);
+
+
+export const standardColor = ['#12939A','#79C7E3', '#1A3177', '#FF9833', '#EF5D28'];
 
 export const niveauDiplomeINSEE = ["Diplome du supérieur", "Niveau BEP", "Niveau Baccalaureat",  "Aucun ou BEPC"];
 export const secteurINSEE = ['Agriculture', 'Construction', 'Industrie', 'Tertiaire marchand', "Tertiaire non marchand"];
@@ -72,10 +85,18 @@ export	const month = ['Janvier','Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Jui
 export	const monthNum = ['01','02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 export const IDregionPSN = ['11','28'];
 
-export const colorDomainSankeyData = ['Tissu économique', 'Transport et logistique', 'Tourisme', 'Environnement et Energie','Foncier','target:2018','target:2017'];
+export const colorDomainCategories = ['Tissu économique', 'Transport', 'Tourisme', 'Télécommunications', 'Foncier', 'Logistique', 'Énergie', 'Environnement et risques'];
+export const colorValuesCategories = ['#95C11F','#F7A600','#919188', '#8080ff' ,"#cb3434",'#ff7733','#cc6699', '#e6e600'];
+
+
+
+export const colorDomainSankeyData = ['Tissu économique', 'Transport', 'Tourisme', 'Télécommunications', 'Foncier', 'Logistique', 'Énergie', 'Environnement et risques',
+																			'target:2018','target:2017'];
+																			
 export const colorScaleSankeyData = scaleOrdinal()
 			.domain(colorDomainSankeyData)
-			.range(['#95C11F','#F7A600','#919188', '#0080C9' ,"#d55d5d",'#ff9966','#ff9966','#ff9966']);
+			.range(['#95C11F','#F7A600','#919188', '#8080ff' ,"#cb3434",'#ff7733','#cc6699', '#e6e600',
+							'#ff9966','#ff9966']);
 
 export const sourceLinkMeteo = {
 	label: 'Source : Météo France - 2016',
@@ -83,4 +104,28 @@ export const sourceLinkMeteo = {
 };
 
 export const ventsCategories = ['seriesVentsMax', 'seriesVentsMin', 'seriesVentsMean'];
+export const ventsCategoriesLabel = ['Maximum des vents (m/s)', 'Minimum des vents (m/s)', 'Moyenne des vents (m/s)'];
+
 export const precipitationsCategories = ['seriesHumidMean', 'seriesPrecipSum'];
+
+export const headerCreationEntreprises = ["Part de l'industrie","Part de la construction",	"Part du commerce, transport, hébergement, restauration", 
+											"Part des services aux entreprises",	"Part des services aux particuliers"];
+
+export const secteurCrea = ['Industrie', 'Construction', "Commerce, transport, hébergement, restauration",'Services aux entreprises','Services aux particuliers'];
+
+export const depenseRecherche = ['depenses_millions_euros_public','depenses_millions_euros_prive'];
+
+export const sankeyStyle = { 
+							labels: {
+								fontSize:'11px'
+							},
+							links: {
+								stroke: 'white',
+								strokeWidth: '1.5px'
+							},
+							rects: {
+								stroke: 'white',
+								strokeWidth: '1.5px',
+								fill: '#6a6a62'
+							}
+						};

@@ -2,7 +2,6 @@ import React from 'react';
 import {csv} from 'd3-fetch';
 import {format} from 'd3-format';
 
-import ScatterOrdinal from './../Components/ScatterOrdinal';
 import ScatterplotHint from './../Components/ScatterplotHint';
 import ChartTitle from './../Components/ChartTitle';
 import StatsHighlights from './../Components/StatsHighlights';
@@ -104,6 +103,8 @@ function HintValue(activeNode) {
 		}
 }
 
+
+
 export default class ScatterPlotEmploi extends React.Component {
 
 	constructor(props) {
@@ -157,6 +158,7 @@ export default class ScatterPlotEmploi extends React.Component {
 					chartType={ {yType:"ordinal", xType:"ordinal"}} 
 					colorProps={{colorType:"category", colorRange: colorArray}}
 					axisProps={null}
+					tickAngle={-30}
 					sizeRange={[2, 20]}
 					hintValueFunction={HintValue}/>
 			{/*

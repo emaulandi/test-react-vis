@@ -11,7 +11,8 @@ import {
   meteoCompare_chartprops,
 	IDstationsMeteoPSN,
 	sourceLinkMeteo,
-	ventsCategories
+	ventsCategories,
+	ventsCategoriesLabel
 } from './../constants';
 
 import {
@@ -26,8 +27,7 @@ function generateSeriesStations(label,data){
 	return data.map( d => {
 		return {chartType: 'LineMarkSeries', className:'', label:'max', style: {}, curve: 'curveMonotoneX', values: d[label]}
 	})
-	
-	console.log(test);
+
 }
 
 const axis = {
@@ -47,7 +47,7 @@ export default class CompareStationsMeteo extends React.Component {
         super(props)
         this.state = {
 					dataVents: [],
-					selectCatVents : ventsCategories[0]
+					selectCatVents : ventsCategoriesLabel[0]
         };
 		
 		this.handleChange = this.handleChange.bind(this);
@@ -78,7 +78,7 @@ export default class CompareStationsMeteo extends React.Component {
 			<ChartTitle title={{main: "Comparaisons des stations météorologiques de la vallée de Seine", h2: "Vents 2016 (m/s)"}}/>
 			
 			<select value={this.state.selectValue} onChange={this.handleChange}>
-				{generateSelectOption(ventsCategories)}
+				{generateSelectOption(ventsCategoriesLabel)}
 			</select>
 			
 			<MultipleLineMarkSeries 
@@ -86,7 +86,7 @@ export default class CompareStationsMeteo extends React.Component {
 				chartType={{xType: "ordinal"}}
 				axis={axis}
 				data={generateSeriesStations(
-					this.state.selectCatVents,
+					ventsCategories[ventsCategoriesLabel.indexOf(this.state.selectCatVents)],
 					this.state.dataVents.filter(d => IDstationsMeteoPSN.includes(d['ID']))
 				)}
 			/>

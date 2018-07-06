@@ -37,10 +37,10 @@ export default class ScatterplotHint extends React.Component {
 				<VerticalGridLines />
 				<HorizontalGridLines />
 				<XAxis tickLabelAngle={this.props.tickAngle} />
-				{ typeof this.props.axisProps !== 'undefined' &&
-					<YAxis tickFormat={v => v + this.props.suffixY} />
+				{ this.props.axisProps != null &&
+					<YAxis tickFormat={v => v + this.props.axisProps.y.suffix} />
 				}
-				{ typeof this.props.axisProps === 'undefined' &&
+				{ this.props.axisProps == null &&
 					<YAxis />
 				}
 			

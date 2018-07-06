@@ -42,7 +42,8 @@ const axis = {
 		label: 'Pourcentage de visiteurs étrangers',
 		rotate:-90,
 		translateX: custom_chartprops.height/2,
-		translateY: -190
+		translateY: -190,
+		suffix: '%'
 	}
 }
 
@@ -109,7 +110,7 @@ export default class ScatterplotTourisme extends React.Component {
 					scaleProps= { {yDomain: [5, 70] } }
 					colorProps={colorProps}
 					axisProps={axis}
-					suffixY = {'%'}
+
 					sizeRange={[2, 20]}
 					hintValueFunction={HintValue}/>
 			

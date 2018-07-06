@@ -6,14 +6,14 @@ import ChartComposition from  './Components/ChartComposition';
 
 import WebFont from 'webfontloader';
 
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route} from 'react-router-dom'
 
 WebFont.load({
   google: {
     families: ['Libre+Franklin:bold', 'Montserrat']
   },
 	typekit: {
-    id: 'myriad-pro'
+    id: ['lwn4yne']
   }
 });
 

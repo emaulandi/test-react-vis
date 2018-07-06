@@ -52,6 +52,7 @@ export default class SankeyHint extends React.Component {
 						...d,
 						opacity: activeLink && i === activeLink.index ? FOCUSED_LINK_OPACITY : BLURRED_LINK_OPACITY
 					}))}
+					nodePadding={5}
 
 					style={this.props.style}
 					// do not use voronoi in combination with link mouse over

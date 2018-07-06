@@ -4,7 +4,7 @@ import {DiscreteColorLegend} from 'react-vis';
 import {csv} from 'd3-fetch';
 import Vents from './../data/wind2016.csv';
 import Precipitations from './../data/precipitation2016.csv';
-import Temperature from './../data/temperature2016.csv';
+
 import MultipleLineMarkSeries from  './../Components/MultipleLineMarkSeries';
 import ChartTitle from  './../Components/ChartTitle';
 import SourceLink from './../Components/SourceLink';
@@ -122,10 +122,13 @@ export default class StationMeteo extends React.Component {
 		}
 		IDvents = findIndex(selectValue, 'Nom', this.state.dataVents);
 		IDprecipitations  = findIndex(selectValue, 'Nom', this.state.dataPrecipitations);
+		//console.log(this.state.dataVents);
+		//console.log(this.state.dataPrecipitations);
 		
 		const allSeriesVents = generateAllSeries(this.state.dataVents[IDvents], ventsConfig, ventsCategories);
 		const allSeriesPrecipitations = generateAllSeries(this.state.dataPrecipitations[IDprecipitations], precipitationsConfig, precipitationsCategories);
-
+		//console.log(allSeriesVents);
+		
 		return (
 			<div>
 			

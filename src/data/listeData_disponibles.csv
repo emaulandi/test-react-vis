@@ -1,0 +1,62 @@
+Catégorie,Description,plateforme,lien,source,date,intégré,couverture
+Tissu économique,Niveau d’éducation : taux de diplômé et répartis par catégorie de diplôme ,INSEE,https://www.insee.fr/fr/statistiques/1893149#consulter,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,"Part des emplois par industrie / filière : secteur (primaire, secondaire, tertiaire)",INSEE,https://www.insee.fr/fr/statistiques/3524476?sommaire=3202716#consulter,INSEE,2016,oui,Paris Seine Normandie
+Tissu économique,Activité professionnelle des individus : lieu de travail localisé à la zone d'emploi en 2014,INSEE,https://www.insee.fr/fr/statistiques/2866325?sommaire=2866354#consulter,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,Déplacements Domicile Travail – Commune source et cible,INSEE,https://www.insee.fr/fr/statistiques/2866308?sommaire=2866354#consulter,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,Evolution de la population par département,INSEE,https://www.insee.fr/fr/statistiques/2012713#tableau-TCRD_004_tab1_departements,INSEE,2018,oui,Paris Seine Normandie
+Tissu économique,Evolution de la population par communes,INSEE,https://www.insee.fr/fr/statistiques/2864136#consulter,INSEE,2013,oui,Paris Seine Normandie
+Tissu économique,Logement : nombre résidence principale / secondaires,INSEE,https://www.insee.fr/fr/statistiques/2864136#consulter,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,Mobilités scolaires des individus : déplacements commune de résidence / commune de scolarisation,INSEE,https://www.insee.fr/fr/statistiques/2866294?sommaire=2866354,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,Attractivité résidentielle : solde migratoire 2013,INSEE,https://www.insee.fr/fr/statistiques/2862068,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,Attractivité résidentielle : solde migratoire 2014,INSEE,https://www.insee.fr/fr/statistiques/2862068,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,Revenu médian disponible,INSEE,https://www.insee.fr/fr/statistiques/3126432,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,Taux de naissance,INSEE,https://www.insee.fr/fr/statistiques/3051485?sommaire=3051496,INSEE,2016,oui,Paris Seine Normandie
+Tissu économique,Taux de mortalité,INSEE,https://www.insee.fr/fr/statistiques/1893253,INSEE,2016,oui,Paris Seine Normandie
+Tissu économique,Taux de pauvreté,INSEE,https://www.insee.fr/fr/statistiques/3126433,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,Budget Recherche et développement: comparaisons régionales ,INSEE,https://www.insee.fr/fr/statistiques/2012678#tableau-TCR_058_tab1_regions2016,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,Vivier de personnes qualifiées,INSEE,https://www.insee.fr/fr/statistiques/3137418#dictionnaire,INSEE,2014,oui,Paris Seine Normandie
+Tissu économique,"Entreprises employeuses du secteur concurrentiel, affiliées au
+régime général (donc hors régime agricole)",data.gouv,https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/,INSEE,2018,oui,Paris Seine Normandie
+Tissu économique,Taux de créations d’entreprises (par secteur d’activité),INSEE,https://www.insee.fr/fr/statistiques/3357451?sommaire=3357459#consulter,INSEE,2017,oui,Paris Seine Normandie
+Transport,Rails,IGN,http://professionnels.ign.fr/route500 ,IGN,2018,oui,Paris Seine Normandie
+Transport,Gares,IGN,http://professionnels.ign.fr/route500 ,IGN,2018,oui,Paris Seine Normandie
+Transport,Routes,IGN,http://professionnels.ign.fr/route500 ,IGN,2018,oui,Paris Seine Normandie
+Transport,Aérodromes,IGN,http://professionnels.ign.fr/route500 ,IGN,2018,oui,Paris Seine Normandie
+Logistique,Domaine public fluvial,data.gouv,https://www.data.gouv.fr/fr/datasets/segments-du-domaine-public-fluvial-dpf-metropole/,eau france,2018,oui,Paris Seine Normandie
+Logistique,Principaux ports de commerce français,IFREMER,http://www.ifremer.fr/demf/reports/2016/10-mar-transp#2015_10-4a_totalcargotrafficfr-csv,IFREMER,2016,oui,Paris Seine Normandie
+Transport,Ports de ferries,eurogeographics,https://eurogeographics.org/products-and-services/open-data/opendata-downloads/ ,eurogeographics,2017,oui,Paris Seine Normandie
+Transport,Lignes de ferries,eurogeographics,https://eurogeographics.org/products-and-services/open-data/opendata-downloads/ ,eurogeographics,2017,oui,Paris Seine Normandie
+Énergie,Lignes RTE aériennes,data.gouv,https://www.data.gouv.fr/fr/datasets/lignes-aeriennes-rte-au-22-decembre-2017-1/,Open Data Réseaux Énergies ODRé,2018,oui,Paris Seine Normandie
+Énergie,Pylônes RTE,data.gouv,https://www.data.gouv.fr/fr/datasets/pylones-rte-au-22-decembre-2017-1/,Open Data Réseaux Énergies ODRé,2018,oui,Paris Seine Normandie
+Énergie,Lignes RTE souterraines,data.gouv,https://www.data.gouv.fr/fr/datasets/lignes-souterraines-rte-au-22-decembre-2017-1/,Open Data Réseaux Énergies ODRé,2018,oui,Paris Seine Normandie
+Télécommunications,Couverture 3G et 4G,data.gouv,https://www.data.gouv.fr/fr/datasets/monreseaumobile/,ARCEP,2017,oui,Paris Seine Normandie
+Télécommunications,Couverture réseau mobile,data.gouv,https://www.data.gouv.fr/fr/datasets/monreseaumobile/,ARCEP,2017,oui,Paris Seine Normandie
+Transport,Routes aériennes,OpenFlights,https://openflights.org/,OpenFlights,2014,oui,Paris Seine Normandie
+Télécommunications,Couverture fibre et  ADSL,data.gouv,https://www.data.gouv.fr/fr/datasets/niveau-des-debits-sur-les-reseaux-dacces-a-internet-adsl-cable-fibre-ftth-2/,Agence du Numérique,2017,oui,Paris Seine Normandie
+Foncier,Topographie,IGN,http://professionnels.ign.fr/bdalti,IGN,2017,oui,Paris Seine Normandie
+Foncier,Zones Industrielles et Commerciales,data.gouv,https://www.data.gouv.fr/fr/datasets/corine-land-cover-occupation-des-sols-en-france/,"Ministère de l'Écologie, du Dév.Durable et de l'Énergie",2012,oui,Paris Seine Normandie
+Foncier,Cadastre,data.gouv,https://www.data.gouv.fr/fr/datasets/cadastre/,Etalab,2018,oui,Paris Seine Normandie
+Foncier,Départements et Communes,IGN, http://professionnels.ign.fr/geofla  ,IGN,2016,oui,Paris Seine Normandie
+Foncier,Occupation du sol,data.gouv,https://www.data.gouv.fr/fr/datasets/corine-land-cover-occupation-des-sols-en-france/,"Ministère de l'Écologie, du Dév.Durable et de l'Énergie",2012,oui,Paris Seine Normandie
+Logistique,Zones d’Activités Logistiques,-,CCI Normandie pour le compte de l'asso de filière Logistique Seine Normandie,CCI Normandie,2017,oui,Paris Seine Normandie
+Environnement et risques,Nombre de cavités souterraines par commune,georisques.fr,http://www.georisques.gouv.fr/dossiers/telechargement,georisques.fr,NA,oui,Paris Seine Normandie
+Environnement et risques,zones inondables,georisques.fr,http://www.georisques.gouv.fr/dossiers/telechargement,georisques.fr,NA,oui,Paris Seine Normandie
+Environnement et risques,Nucléaire,data.gouv,https://www.data.gouv.fr/fr/datasets/liste-des-reacteurs-nucleaires-en-france-nd/,nosDonnées.fr,2012,oui,Paris Seine Normandie
+Environnement et risques,Météorologie à la station,Météo France,https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=115&id_rubrique=38,Météo France,2016,oui,Paris Seine Normandie
+Environnement et risques,Parcs naturels nationaux et régionaux,OpenStreetMap,openstreetmap.org,OpenStreetMap,2018,oui,Paris Seine Normandie
+Environnement et risques,Zones protégées Natura 2000,data.gouv,https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-natura-2000/ ,INPN,2016,oui,Paris Seine Normandie
+Énergie,Parc éolien sous forme de points,data.gouv,https://www.data.gouv.fr/en/datasets/les-parcs-eoliens-terrestres-de-normandie-representes-par-des-points-1/,DREAL Normandie,2018,oui,Paris Seine Normandie
+Énergie,Barrages,eurogeographics,https://eurogeographics.org/products-and-services/open-data/opendata-downloads/ ,eurogeographics,2017,oui,Paris Seine Normandie
+Environnement et risques,Bornes de Recharge pour Véhicules Électriques ,data.gouv,https://www.data.gouv.fr/fr/datasets/fichier-consolide-des-bornes-de-recharge-pour-vehicules-electriques-irve/,Etalab,2016,oui,Paris Seine Normandie
+Tourisme,Fréquentation des hébergements collectifs touristiques en 2017,INSEE,https://www.insee.fr/fr/statistiques/2012672#tableau-TCRD_020_tab1_departements,INSEE,2017,oui,Paris Seine Normandie
+Tourisme,Etablissements d'hébergements touristiques en 2018 ,INSEE,https://www.insee.fr/fr/statistiques/2012688,INSEE,2018,oui,Paris Seine Normandie
+Tourisme,Parcs naturels nationaux et régionaux,OpenStreetMap,openstreetmap.org,OpenStreetMap,2018,oui,Paris Seine Normandie
+Tourisme,Points d’intérêts naturels,eurogeographics,https://eurogeographics.org/products-and-services/open-data/opendata-downloads/,eurogeographics,2017,oui,Paris Seine Normandie
+Tourisme,Patrimoine fluvial remarquable,IAU-IDF,http://data.iau-idf.fr/datasets/e646de156cf84c298416a430e3f6f288_3,IAU-IDF,2018,oui,Île-de-France
+Tourisme,Patrimoine mondial de l’UNESCO,IAU-IDF,http://data.iau-idf.fr/datasets/8affb5badbab4b0dbb129aec441396b4_6,IAU-IDF,2017,oui,Île-de-France
+Tourisme,Ville et pays d’art et d’histoire,IAU-IDF,http://data.iau-idf.fr/datasets/1842c881e553404981c46501ef2cb3a2_7,IAU-IDF,2017,oui,Île-de-France
+Tourisme,Châteaux et leur parc,IAU-IDF,http://data.iau-idf.fr/datasets/14347f5e8654490bbbd446a8f8ed0bf4₂,IAU-IDF,2017,oui,Île-de-France
+Tourisme,Les plus beaux villages de France,Les plus beaux villages de France,http://www.les-plus-beaux-villages-de-france.org/en/the-most-beautiful-villages-of-france?filter0=&filter1=140,Les plus beaux villages de France,2018,oui,Paris Seine Normandie
+Tourisme,Hôtels classés,data.gouv,https://www.data.gouv.fr/fr/datasets/la-carte-des-hotels-classes-en-ile-de-france-idf/,Atout France,2016,oui,Île-de-France
+Tourisme,Campings classés,data.gouv,https://www.data.gouv.fr/fr/datasets/la-carte-des-hotels-classes-en-ile-de-france-idf/,Atout France,2016,oui,Île-de-France
+Logistique,Entreprises employeuses du secteur logistique,data.gouv,https://www.data.gouv.fr/fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/,INSEE,2018,Accès oui,Paris Seine Normandie

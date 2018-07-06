@@ -1,5 +1,5 @@
 import React from 'react';
-import {XYPlot, XAxis, YAxis,  VerticalBarSeries, HorizontalGridLines, VerticalGridLines } from 'react-vis';
+import {XYPlot, XAxis, YAxis,  VerticalBarSeries, HorizontalBarSeries, HorizontalGridLines, VerticalGridLines } from 'react-vis';
 
 export default class MultipleStackedBar extends React.Component {
 
@@ -8,11 +8,11 @@ export default class MultipleStackedBar extends React.Component {
 		return (
 			
 			<XYPlot 
+				{...this.props.xyplotAxisType}
 				{...this.props.chartProps}
 				{...this.props.scaleProps}
-				stackBy="y"
-        		xType="ordinal">
-			
+				
+				>
         <HorizontalGridLines />
 				<VerticalGridLines />
 
@@ -21,13 +21,26 @@ export default class MultipleStackedBar extends React.Component {
 			{
 				this.props.data.map((d, idx) => {
 					
-					return (
-						<VerticalBarSeries 
-						key={idx}
-						data={d.values}
-						color={d.color}
-						/>
-					);
+					if (this.props.xyplotAxisType.stackBy ==="y") {
+						return(
+							<VerticalBarSeries 
+							key={idx}
+							data={d.values}
+							color={d.color}
+							/>
+						);
+					}
+					else {
+						return(
+							<HorizontalBarSeries 
+							key={idx}
+							data={d.values}
+							color={d.color}
+							/>
+						);
+					}
+						
+					
 				})
 			}
 			</XYPlot>
