@@ -13,7 +13,7 @@ import React from 'react';
 
 import {_} from 'underscore';
 
-
+/* Clean, format as numbers, and create a list from 2D array */
 export function cleanDataEmploi(data) {
 	
 	// From crosstab to list
@@ -41,6 +41,7 @@ export function cleanDataEmploi(data) {
 	return listData ;
 }
 
+/* Clean, format as numbers, and compute the number of hotel nights by for 1000 inhabitants */
 export function cleanDataTourisme(data) {
 	
 	data.forEach( d => {
@@ -61,6 +62,7 @@ export function cleanDataTourisme(data) {
 
 }
 
+/* Clean, format as numbers, and generate percentage value for each degree level from absolute numbers */
 export function cleanDataDiplome(data) {
 	var proportion = [];
 	var i;
@@ -90,6 +92,7 @@ export function cleanDataDiplome(data) {
 	return proportion;
 }
 
+/* Clean, return number for Public & private expenses for each region */
 export function cleanDataRecherche(data){
 	
 	return data.map (d => {
@@ -318,6 +321,7 @@ export function generateSeries(data, stackBy, id, arraySeries, colorTab) {
 	return seriesList;
 }
 
+/* Generate data for ScatterPlot : {x: y: size: } */
 export function generateItemsScatterplot(data, xAttribute, yAttribute, sizeAttribute) {
 
 	return data.map(row => {
@@ -331,6 +335,7 @@ export function generateItemsScatterplot(data, xAttribute, yAttribute, sizeAttri
 	});
 }
 
+/* Generate data for ScatterPlot with color on colorAttribute: {x: y: size: color: } */
 export function generateItemsScatterplotColor(data, xAttribute, yAttribute, sizeAttribute, colorFunction, colorAttribute) {
 
 	return data.map(row => {
@@ -346,6 +351,7 @@ export function generateItemsScatterplotColor(data, xAttribute, yAttribute, size
 	});
 }
 
+/* Return 1 if the region match a PSN regions */
 export function colorRegion(colorAttribute) {
 	var color = 0;
 
@@ -357,6 +363,7 @@ export function colorRegion(colorAttribute) {
 	return color;
 }
 
+/* Sum the value of dataAttribute attribute count for each departement (stated in attributePSN attribute) with isPSNDep function > Code of Departement */
 export function sumDataCodeDep(data, attributePSN, attributeCount) {
 	var sum = 0 ;
 	var sumPSN = 0;
@@ -371,6 +378,7 @@ export function sumDataCodeDep(data, attributePSN, attributeCount) {
 	return {total: sum, psn: sumPSN};
 }
 
+/* Sum the value of dataAttribute attribute count for each departement (stated in attributePSN attribute) with isPSN function > Code of the city/commune*/
 export function sumPSN(data, attributePSN, attributeCount) {
 	var sum = 0 ;
 	var sumPSN = 0;
@@ -388,6 +396,7 @@ export function sumPSN(data, attributePSN, attributeCount) {
 	return {total: sum, psn: sumPSN};
 }
 
+/* Return the sum of attributeCount attribute in an array */
 export function sumData(data, attributeCount) {
 	var sum = 0 ;
 	
@@ -444,6 +453,7 @@ export function fluxMigratoire(data) {
 	};
 }
 
+/* Return true if the given Code Departement in inside the PSN area */
 export function isPSNdep(codeDep) {
 	
 	var isPSN = false ;
@@ -456,6 +466,7 @@ export function isPSNdep(codeDep) {
 	return isPSN;
 }
 
+/* Return true if the given Code City/Commune in inside the PSN area */
 export function isPSN(codeCommune) {
 	var isPSN = false ;
 	var i;
@@ -469,6 +480,7 @@ export function isPSN(codeCommune) {
 	return isPSN;
 }
 
+/* Filter a serie on its name */
 export function filterSeries(data, conditionsSeries){
 	//Filtrer sur le département > pas réalisé
 	//var conditionsDepartements = ['Yvelines',"Val-d'Oise",'Hauts-de-Seine','Seine-Saint-Denis','Paris','Seine-Maritime','Eure','Calvados','Manche'];
@@ -492,6 +504,7 @@ export function filterSeries(data, conditionsSeries){
 	return filteredSeries;
 }
 
+/* Filter Scatterplot data base on 2 array conditions, for x and y values */
 export function filterDataScatterplot(data, conditionsX, conditionsY){
 
 	//var conditionsX = ['Paris'];
@@ -506,6 +519,7 @@ export function filterDataScatterplot(data, conditionsX, conditionsY){
 	
 }
 
+/* Generate a checkbox array with labels and checked as true by default for a given array of label */
 export function generateCheckBox(array){
 	var checkBoxArray = [];
 	array.forEach( d => {
@@ -514,6 +528,7 @@ export function generateCheckBox(array){
 	return checkBoxArray;
 }
 
+/* Return an array of label, only the ones corresponding to a checked checkboxe*/
 export function conditionsFromCheckboxes(checkboxesStatus) {
 	var conditions = [];
 	checkboxesStatus.forEach( d => {
@@ -753,6 +768,7 @@ export function getColorSankey(item, colorScale, colorDefault){
 	}
 }
 
+/* Generate select dropdown option from an array of lable */
 export function generateSelectOption(itemArray){
 
 	return itemArray.map( (d,i) => {
