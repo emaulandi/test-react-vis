@@ -1,0 +1,40 @@
+Catégorie,Source,Détails,Site,Accès,Couverture
+Divers,GeoNormandie,divers,https://www.geonormandie.fr/geonetwork/srv/fre/catalog.search#/home,libre,Normandie
+Divers,Open Data Île-de-France,divers,https://data.iledefrance.fr/page/home/,libre,Île-de-France
+Divers,OpenStreetMap,divers,openstreetmap.org,libre,Monde
+Divers,Estuaire de la Seine,divers,https://data.estuairedelaseine.fr/,libre,Bassin du Havre
+Énergie,IFREMER,Production d’énergie,http://www.ifremer.fr/demf/reports/2016/4-power-gen,partiel,France
+Environnement et risques,IFREMER,Portection de l’environnement littoral et marin,http://www.ifremer.fr/demf/reports/2016/14-environmental-protection,partiel,France
+Environnement et risques,DREAL Normandie,Réglementation environnementale et risques,http://www.donnees.normandie.developpement-durable.gouv.fr/,libre,Normandie
+Environnement et risques,DRIEE Ile-de-France,Réglementation environnementale et risques,http://ws.carmen.developpement-durable.gouv.fr/ATOM/18/donnees_publiques_IDF.atom,libre,Île-de-France
+Environnement et risques,AURBSE,Développement durable,http://aurbse.maps.arcgis.com/home/index.html#,en ligne,Rouen et alentours
+Environnement et risques,AURH,Environnement,https://www.aurh.fr/nos-ressources/sig/,aucun,Bassin du Havre
+Environnement et risques,Météo France,Indications sur la météo et/ou climat,https://donneespubliques.meteofrance.fr/?fond=rubrique&id_rubrique=29,payant,France
+Foncier,CCI Normandie,Terrains en ZAE,https://www.ccibaseco-normandie.fr/,en ligne,Normandie
+Foncier,HAROPA,Foncier : localisation et disponibilité des terrains/locaux HAROPA,http://realestate.haropaports.com/,en ligne,Paris Seine Normandie
+Foncier,IAU IDF,divers,http://data.iau-idf.fr/,libre,Île-de-France
+Foncier,AURBSE,Aménagement,http://aurbse.maps.arcgis.com/home/index.html#,en ligne,Rouen et alentours
+Foncier,AUCAME,"Etablissements commerciaux proposant une surface de vente de plus de 300m2, équipements publics",http://www.aucame.fr/web/publications/SIG/Telechargements.php,libre,Caen et alentours
+Foncier,AURH,Aménagement,https://www.aurh.fr/nos-ressources/sig/,aucun,Bassin du Havre
+Foncier,Cadre de ville,Carte des ventes de fonciers par commune,https://www.cadredeville.com/NewsRecentes/ile-de-france-toutes-les-ventes-de-fonciers-batis-et-non-batis-par-commune,payant,Île-de-France
+Foncier,CEREMA,marché fonciers et immobiliers,https://www.cerema.fr/fr/actualites/cerema-concu-appdvf-application-gratuite-collectivites-afin-0,aucun,France
+Foncier,Le Havre Développement,Immobilier et foncier d’entreprise,https://www.implanteo-lehavre.fr/,en ligne,Bassin du Havre
+Logistique,HAROPA,"Logistique marchandises : infrastructures portuaires, plateforme multimodal, lignes régulières",http://www.haropa-solutions.com/fr/logistique-marchandises,aucun,Paris Seine Normandie
+Logistique,VNF,Transport fluvial : trafic de marchandise,http://www.vnf.fr/vnf/content.vnf?action=content&occ_id=32276,en ligne,France
+Logistique,LSN – Logistique Seine-Normandie,,https://www.logistique-seine-normandie.com/etudes/les-donnees-essentielles-paris-rouen-le-havre-axe-seine,aucun,Paris Seine Normandie
+Tissu économique,CCI Normandie,divers,https://www.normandie.cci.fr/,aucun,Normandie
+Tissu économique,CCI Paris Ile-de-France,divers,http://www.cci-paris-idf.fr/,aucun,Île-de-France
+Tissu économique,CCIT,divers,,aucun,Territoiriale
+Tissu économique,IFREMER,Pêches et commerce des produit de la mer ,http://www.ifremer.fr/demf/reports/2016/1-seafood,partiel,France
+Tissu économique,AURBSE,Evolutions économiques et sociales,http://aurbse.maps.arcgis.com/home/index.html#,en ligne,Rouen et alentours
+Tissu économique,AURH,"Population, économie, logement, mobilités",https://www.aurh.fr/nos-ressources/sig/,aucun,Bassin du Havre
+Tourisme,IFREMER,Tourisme littoral,http://www.ifremer.fr/demf/reports/2016/9-coast-tourism,partiel,France
+Tourisme,HAROPA,Tourisme fluvial en Seine / Maritime,http://www.haropa-solutions.com/fr/tourisme,aucun,Paris Seine Normandie
+Tourisme,VNF,Tourisme fluvial,http://www.vnf.fr/vnf/content.vnf?action=home&theme=tour,en ligne,France
+Tourisme,IAU IDF,divers,http://data.iau-idf.fr/,libre,Île-de-France
+Tourisme,Datatourisme,"Evenements, lieux, produits",https://www.data.gouv.fr/fr/datasets/donnees-touristiques-de-la-base-datatourisme/,libre,France
+Tourisme,EventsEye,"Salons spécialisés, Foires, Conférences & Evénements professionnels mondiaux",https://www.eventseye.com/salons.html,en ligne,Monde
+Tourisme,FoiresInfo,Foires internationales,https://www.foiresinfo.fr/,en ligne,Monde
+Tourisme,ATOUT FRANCE,divers,http://www.atout-france.fr/,aucun,France
+Transport,IFREMER,Transport maritime et fluvial,http://www.ifremer.fr/demf/reports/2016/10-mar-transp,partiel,France
+Transport,IAU IDF,divers,http://data.iau-idf.fr/,libre,Île-de-France
