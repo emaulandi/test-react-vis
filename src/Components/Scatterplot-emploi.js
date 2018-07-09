@@ -156,7 +156,8 @@ export default class ScatterPlotEmploi extends React.Component {
 					} 
 					chartProps={  marginleft_chartprops }
 					chartType={ {yType:"ordinal", xType:"ordinal"}} 
-					colorProps={{colorType:"category", colorRange: colorArray}}
+
+					colorProps={{color:colorArray[1]}}
 					axisProps={null}
 					tickAngle={-30}
 					sizeRange={[2, 20]}
