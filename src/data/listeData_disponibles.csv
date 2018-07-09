@@ -34,17 +34,17 @@ Télécommunications,Couverture réseau mobile,data.gouv,https://www.data.gouv.f
 Transport,Routes aériennes,OpenFlights,https://openflights.org/,OpenFlights,2014,oui,Paris Seine Normandie
 Télécommunications,Couverture fibre et  ADSL,data.gouv,https://www.data.gouv.fr/fr/datasets/niveau-des-debits-sur-les-reseaux-dacces-a-internet-adsl-cable-fibre-ftth-2/,Agence du Numérique,2017,oui,Paris Seine Normandie
 Foncier,Topographie,IGN,http://professionnels.ign.fr/bdalti,IGN,2017,oui,Paris Seine Normandie
-Foncier,Zones Industrielles et Commerciales,data.gouv,https://www.data.gouv.fr/fr/datasets/corine-land-cover-occupation-des-sols-en-france/,"Ministère de l'Écologie, du Dév.Durable et de l'Énergie",2012,oui,Paris Seine Normandie
+Foncier,Zones Industrielles et Commerciales,data.gouv,https://www.data.gouv.fr/fr/datasets/corine-land-cover-occupation-des-sols-en-france/,Ministère de l'Écologie et du Dév.Durable,2012,oui,Paris Seine Normandie
 Foncier,Cadastre,data.gouv,https://www.data.gouv.fr/fr/datasets/cadastre/,Etalab,2018,oui,Paris Seine Normandie
 Foncier,Départements et Communes,IGN, http://professionnels.ign.fr/geofla  ,IGN,2016,oui,Paris Seine Normandie
-Foncier,Occupation du sol,data.gouv,https://www.data.gouv.fr/fr/datasets/corine-land-cover-occupation-des-sols-en-france/,"Ministère de l'Écologie, du Dév.Durable et de l'Énergie",2012,oui,Paris Seine Normandie
+Foncier,Occupation du sol,data.gouv,https://www.data.gouv.fr/fr/datasets/corine-land-cover-occupation-des-sols-en-france/,Ministère de l'Écologie et du Dév.Durable,2012,oui,Paris Seine Normandie
 Logistique,Zones d’Activités Logistiques,-,CCI Normandie pour le compte de l'asso de filière Logistique Seine Normandie,CCI Normandie,2017,oui,Paris Seine Normandie
-Environnement et risques,Nombre de cavités souterraines par commune,georisques.fr,http://www.georisques.gouv.fr/dossiers/telechargement,georisques.fr,NA,oui,Paris Seine Normandie
-Environnement et risques,zones inondables,georisques.fr,http://www.georisques.gouv.fr/dossiers/telechargement,georisques.fr,NA,oui,Paris Seine Normandie
-Environnement et risques,Nucléaire,data.gouv,https://www.data.gouv.fr/fr/datasets/liste-des-reacteurs-nucleaires-en-france-nd/,nosDonnées.fr,2012,oui,Paris Seine Normandie
-Environnement et risques,Météorologie à la station,Météo France,https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=115&id_rubrique=38,Météo France,2016,oui,Paris Seine Normandie
-Environnement et risques,Parcs naturels nationaux et régionaux,OpenStreetMap,openstreetmap.org,OpenStreetMap,2018,oui,Paris Seine Normandie
-Environnement et risques,Zones protégées Natura 2000,data.gouv,https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-natura-2000/ ,INPN,2016,oui,Paris Seine Normandie
+Environnement,Nombre de cavités souterraines par commune,georisques.fr,http://www.georisques.gouv.fr/dossiers/telechargement,georisques.fr,NA,oui,Paris Seine Normandie
+Environnement,zones inondables,georisques.fr,http://www.georisques.gouv.fr/dossiers/telechargement,georisques.fr,NA,oui,Paris Seine Normandie
+Environnement,Nucléaire,data.gouv,https://www.data.gouv.fr/fr/datasets/liste-des-reacteurs-nucleaires-en-france-nd/,nosDonnées.fr,2012,oui,Paris Seine Normandie
+Environnement,Météorologie à la station,Météo France,https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=115&id_rubrique=38,Météo France,2016,oui,Paris Seine Normandie
+Environnement,Parcs naturels nationaux et régionaux,OpenStreetMap,openstreetmap.org,OpenStreetMap,2018,oui,Paris Seine Normandie
+Environnement,Zones protégées Natura 2000,data.gouv,https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-natura-2000/ ,INPN,2016,oui,Paris Seine Normandie
 Énergie,Parc éolien sous forme de points,data.gouv,https://www.data.gouv.fr/en/datasets/les-parcs-eoliens-terrestres-de-normandie-representes-par-des-points-1/,DREAL Normandie,2018,oui,Paris Seine Normandie
 Énergie,Barrages,eurogeographics,https://eurogeographics.org/products-and-services/open-data/opendata-downloads/ ,eurogeographics,2017,oui,Paris Seine Normandie
 Environnement et risques,Bornes de Recharge pour Véhicules Électriques ,data.gouv,https://www.data.gouv.fr/fr/datasets/fichier-consolide-des-bornes-de-recharge-pour-vehicules-electriques-irve/,Etalab,2016,oui,Paris Seine Normandie

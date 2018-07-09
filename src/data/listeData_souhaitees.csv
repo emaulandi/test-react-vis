@@ -3,38 +3,38 @@ Divers,GeoNormandie,Base de données GeoNormandie,https://www.geonormandie.fr/ge
 Divers,Open Data Île-de-France,Plateforme opendata Ile de France,https://data.iledefrance.fr/page/home/,Accès Libre,libre,Île-de-France
 Divers,OpenStreetMap,OpenStreetMap,openstreetmap.org,Accès Libre,libre,Monde
 Divers,Estuaire de la Seine,Base de données Estuaire de la Seine,https://data.estuairedelaseine.fr/,Accès Libre,libre,Bassin du Havre
-Environnement et risques,AURH,Environnement,https://www.aurh.fr/nos-ressources/sig/,Identifié et non accessible,aucun,Bassin du Havre
+Énergie,IFREMER,Production d’énergie,http://www.ifremer.fr/demf/reports/2016/4-power-gen,Identifié et non accessible,partiel,France
+Environnement,AURH,Environnement,https://www.aurh.fr/nos-ressources/sig/,Identifié et non accessible,aucun,Bassin du Havre
+Environnement,AURBSE,Développement durable,http://aurbse.maps.arcgis.com/home/index.html#,Identifié et non accessible,en ligne,Rouen et alentours
+Environnement,DREAL Normandie,Réglementation environnementale et risques,http://www.donnees.normandie.developpement-durable.gouv.fr/,Accès Libre,libre,Normandie
+Environnement,DRIEE Ile-de-France,Réglementation environnementale et risques,http://ws.carmen.developpement-durable.gouv.fr/ATOM/18/donnees_publiques_IDF.atom,Accès Libre,libre,Île-de-France
+Environnement,IFREMER,Portection de l’environnement littoral et marin,http://www.ifremer.fr/demf/reports/2016/14-environmental-protection,Identifié et non accessible,partiel,France
+Environnement,Météo France,Indications sur la météo et/ou climat,https://donneespubliques.meteofrance.fr/?fond=rubrique&id_rubrique=29,Identifié et payant,payant,France
 Foncier,AURH,Aménagement,https://www.aurh.fr/nos-ressources/sig/,Identifié et non accessible,aucun,Bassin du Havre
 Foncier,CEREMA,marché fonciers et immobiliers,https://www.cerema.fr/fr/actualites/cerema-concu-appdvf-application-gratuite-collectivites-afin-0,Identifié et non accessible,aucun,France
-Logistique,HAROPA,"Logistique marchandises : infrastructures portuaires, plateforme multimodal, lignes régulières",http://www.haropa-solutions.com/fr/logistique-marchandises,Identifié et non accessible,aucun,Paris Seine Normandie
-Logistique,LSN – Logistique Seine-Normandie,,https://www.logistique-seine-normandie.com/etudes/les-donnees-essentielles-paris-rouen-le-havre-axe-seine,Identifié et non accessible,aucun,Paris Seine Normandie
-Tissu économique,CCI Normandie,Base de données CCI Normandie,https://www.normandie.cci.fr/,Identifié et non accessible,aucun,Normandie
-Tissu économique,CCI Paris Ile-de-France,Base de données CCI Paris Ile-de-France,http://www.cci-paris-idf.fr/,Identifié et non accessible,aucun,Île-de-France
-Tissu économique,CCIT,Base de données CCIT,,Identifié et non accessible,aucun,Territoiriale
-Tissu économique,AURH,"Population, économie, logement, mobilités",https://www.aurh.fr/nos-ressources/sig/,Identifié et non accessible,aucun,Bassin du Havre
-Tourisme,HAROPA,Tourisme fluvial en Seine / Maritime,http://www.haropa-solutions.com/fr/tourisme,Identifié et non accessible,aucun,Paris Seine Normandie
-Tourisme,ATOUT FRANCE,Base de données ATOUT FRANCE,http://www.atout-france.fr/,Identifié et non accessible,aucun,France
-Environnement et risques,AURBSE,Développement durable,http://aurbse.maps.arcgis.com/home/index.html#,Identifié et non accessible,en ligne,Rouen et alentours
 Foncier,CCI Normandie,Terrains en ZAE,https://www.ccibaseco-normandie.fr/,Identifié et non accessible,en ligne,Normandie
 Foncier,HAROPA,Foncier : localisation et disponibilité des terrains/locaux HAROPA,http://realestate.haropaports.com/,Identifié et non accessible,en ligne,Paris Seine Normandie
 Foncier,AURBSE,Aménagement,http://aurbse.maps.arcgis.com/home/index.html#,Identifié et non accessible,en ligne,Rouen et alentours
 Foncier,Le Havre Développement,Immobilier et foncier d’entreprise,https://www.implanteo-lehavre.fr/,Identifié et non accessible,en ligne,Bassin du Havre
+Foncier,IAU IDF,Base de données IAU IDF,http://data.iau-idf.fr/,Accès Libre,libre,Île-de-France
+Foncier,AUCAME,"Etablissements commerciaux proposant une surface de vente de plus de 300m2, équipements publics",http://www.aucame.fr/web/publications/SIG/Telechargements.php,Accès Libre,libre,Caen et alentours
+Foncier,Cadre de ville,Carte des ventes de fonciers par commune,https://www.cadredeville.com/NewsRecentes/ile-de-france-toutes-les-ventes-de-fonciers-batis-et-non-batis-par-commune,Identifié et payant,payant,Île-de-France
+Logistique,HAROPA,"Logistique marchandises : infrastructures portuaires, plateforme multimodal, lignes régulières",http://www.haropa-solutions.com/fr/logistique-marchandises,Identifié et non accessible,aucun,Paris Seine Normandie
+Logistique,LSN – Logistique Seine-Normandie,,https://www.logistique-seine-normandie.com/etudes/les-donnees-essentielles-paris-rouen-le-havre-axe-seine,Identifié et non accessible,aucun,Paris Seine Normandie
 Logistique,VNF,Transport fluvial : trafic de marchandise,http://www.vnf.fr/vnf/content.vnf?action=content&occ_id=32276,Identifié et non accessible,en ligne,France
+Tissu économique,CCI Normandie,Base de données CCI Normandie,https://www.normandie.cci.fr/,Identifié et non accessible,aucun,Normandie
+Tissu économique,CCI Paris Ile-de-France,Base de données CCI Paris Ile-de-France,http://www.cci-paris-idf.fr/,Identifié et non accessible,aucun,Île-de-France
+Tissu économique,CCIT,Base de données CCIT,,Identifié et non accessible,aucun,Territoiriale
+Tissu économique,AURH,"Population, économie, logement, mobilités",https://www.aurh.fr/nos-ressources/sig/,Identifié et non accessible,aucun,Bassin du Havre
 Tissu économique,AURBSE,Evolutions économiques et sociales,http://aurbse.maps.arcgis.com/home/index.html#,Identifié et non accessible,en ligne,Rouen et alentours
+Tissu économique,IFREMER,Pêches et commerce des produit de la mer ,http://www.ifremer.fr/demf/reports/2016/1-seafood,Identifié et non accessible,partiel,France
+Tourisme,HAROPA,Tourisme fluvial en Seine / Maritime,http://www.haropa-solutions.com/fr/tourisme,Identifié et non accessible,aucun,Paris Seine Normandie
+Tourisme,ATOUT FRANCE,Base de données ATOUT FRANCE,http://www.atout-france.fr/,Identifié et non accessible,aucun,France
 Tourisme,VNF,Tourisme fluvial,http://www.vnf.fr/vnf/content.vnf?action=home&theme=tour,Identifié et non accessible,en ligne,France
 Tourisme,EventsEye,"Salons spécialisés, Foires, Conférences & Evénements professionnels mondiaux",https://www.eventseye.com/salons.html,Identifié et non accessible,en ligne,Monde
 Tourisme,FoiresInfo,Foires internationales,https://www.foiresinfo.fr/,Identifié et non accessible,en ligne,Monde
-Environnement et risques,DREAL Normandie,Réglementation environnementale et risques,http://www.donnees.normandie.developpement-durable.gouv.fr/,Accès Libre,libre,Normandie
-Environnement et risques,DRIEE Ile-de-France,Réglementation environnementale et risques,http://ws.carmen.developpement-durable.gouv.fr/ATOM/18/donnees_publiques_IDF.atom,Accès Libre,libre,Île-de-France
-Foncier,IAU IDF,Base de données IAU IDF,http://data.iau-idf.fr/,Accès Libre,libre,Île-de-France
-Foncier,AUCAME,"Etablissements commerciaux proposant une surface de vente de plus de 300m2, équipements publics",http://www.aucame.fr/web/publications/SIG/Telechargements.php,Accès Libre,libre,Caen et alentours
 Tourisme,IAU IDF,Base de données IAU IDF,http://data.iau-idf.fr/,Accès Libre,libre,Île-de-France
 Tourisme,Datatourisme,"Evenements, lieux, produits",https://www.data.gouv.fr/fr/datasets/donnees-touristiques-de-la-base-datatourisme/,Accès Libre,libre,France
-Transport,IAU IDF,Base de données IAU IDF,http://data.iau-idf.fr/,Accès Libre,libre,Île-de-France
-Énergie,IFREMER,Production d’énergie,http://www.ifremer.fr/demf/reports/2016/4-power-gen,Identifié et non accessible,partiel,France
-Environnement et risques,IFREMER,Portection de l’environnement littoral et marin,http://www.ifremer.fr/demf/reports/2016/14-environmental-protection,Identifié et non accessible,partiel,France
-Tissu économique,IFREMER,Pêches et commerce des produit de la mer ,http://www.ifremer.fr/demf/reports/2016/1-seafood,Identifié et non accessible,partiel,France
 Tourisme,IFREMER,Tourisme littoral,http://www.ifremer.fr/demf/reports/2016/9-coast-tourism,Identifié et non accessible,partiel,France
+Transport,IAU IDF,Base de données IAU IDF,http://data.iau-idf.fr/,Accès Libre,libre,Île-de-France
 Transport,IFREMER,Transport maritime et fluvial,http://www.ifremer.fr/demf/reports/2016/10-mar-transp,Identifié et non accessible,partiel,France
-Environnement et risques,Météo France,Indications sur la météo et/ou climat,https://donneespubliques.meteofrance.fr/?fond=rubrique&id_rubrique=29,Identifié et payant,payant,France
-Foncier,Cadre de ville,Carte des ventes de fonciers par commune,https://www.cadredeville.com/NewsRecentes/ile-de-france-toutes-les-ventes-de-fonciers-batis-et-non-batis-par-commune,Identifié et payant,payant,Île-de-France

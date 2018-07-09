@@ -9,19 +9,19 @@ Divers,Estuaire de la Seine,Base de données Estuaire de la Seine,https://data.e
 Énergie,Open Data Réseaux Énergies ODRé,Lignes RTE souterraines,https://www.data.gouv.fr/fr/datasets/lignes-souterraines-rte-au-22-decembre-2017-1/,Accès Libre,libre,Paris Seine Normandie,oui
 Énergie,DREAL Normandie,Parc éolien sous forme de points,https://www.data.gouv.fr/en/datasets/les-parcs-eoliens-terrestres-de-normandie-representes-par-des-points-1/,Accès Libre,libre,Paris Seine Normandie,oui
 Énergie,eurogeographics,Barrages,https://eurogeographics.org/products-and-services/open-data/opendata-downloads/ ,Accès Libre,libre,Paris Seine Normandie,oui
-Environnement et risques,IFREMER,Portection de l’environnement littoral et marin,http://www.ifremer.fr/demf/reports/2016/14-environmental-protection,Identifié et non accessible,Accès partiel,Paris Seine Normandie,non
-Environnement et risques,Météo France,Indications sur la météo et/ou climat,https://donneespubliques.meteofrance.fr/?fond=rubrique&id_rubrique=29,Identifié et payant,Accès payant,Paris Seine Normandie,non
-Environnement et risques,AURH,Environnement,https://www.aurh.fr/nos-ressources/sig/,Identifié et non accessible,aucun accès connu,Bassin du Havre,non
-Environnement et risques,AURBSE,Développement durable,http://aurbse.maps.arcgis.com/home/index.html#,Identifié et non accessible,"en ligne, non téléchargeable",Rouen et alentours,non
-Environnement et risques,DREAL Normandie,Réglementation environnementale et risques,http://www.donnees.normandie.developpement-durable.gouv.fr/,Accès Libre,libre,Normandie,non
-Environnement et risques,DRIEE Ile-de-France,Réglementation environnementale et risques,http://ws.carmen.developpement-durable.gouv.fr/ATOM/18/donnees_publiques_IDF.atom,Accès Libre,libre,Île-de-France,non
-Environnement et risques,georisques.fr,Nombre de cavités souterraines par commune,http://www.georisques.gouv.fr/dossiers/telechargement,Accès Libre,libre,Paris Seine Normandie,oui
-Environnement et risques,georisques.fr,Zones inondables,http://www.georisques.gouv.fr/dossiers/telechargement,Accès Libre,libre,Paris Seine Normandie,oui
-Environnement et risques,nosDonnées.fr,Nucléaire,https://www.data.gouv.fr/fr/datasets/liste-des-reacteurs-nucleaires-en-france-nd/,Accès Libre,libre,Paris Seine Normandie,oui
-Environnement et risques,Météo France,Météorologie à la station,https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=115&id_rubrique=38,Accès Libre,libre,Paris Seine Normandie,oui
-Environnement et risques,OpenStreetMap,Parcs naturels nationaux et régionaux,openstreetmap.org,Accès Libre,libre,Paris Seine Normandie,oui
-Environnement et risques,INPN,Zones protégées Natura 2000,https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-natura-2000/ ,Accès Libre,libre,Paris Seine Normandie,oui
-Environnement et risques,Etalab,Bornes de Recharge pour Véhicules Électriques ,https://www.data.gouv.fr/fr/datasets/fichier-consolide-des-bornes-de-recharge-pour-vehicules-electriques-irve/,Accès Libre,libre,Paris Seine Normandie,oui
+Environnement,IFREMER,Portection de l’environnement littoral et marin,http://www.ifremer.fr/demf/reports/2016/14-environmental-protection,Identifié et non accessible,Accès partiel,Paris Seine Normandie,non
+Environnement,Météo France,Indications sur la météo et/ou climat,https://donneespubliques.meteofrance.fr/?fond=rubrique&id_rubrique=29,Identifié et payant,Accès payant,Paris Seine Normandie,non
+Environnement,AURH,Environnement,https://www.aurh.fr/nos-ressources/sig/,Identifié et non accessible,aucun accès connu,Bassin du Havre,non
+Environnement,AURBSE,Développement durable,http://aurbse.maps.arcgis.com/home/index.html#,Identifié et non accessible,"en ligne, non téléchargeable",Rouen et alentours,non
+Environnement,DREAL Normandie,Réglementation environnementale et risques,http://www.donnees.normandie.developpement-durable.gouv.fr/,Accès Libre,libre,Normandie,non
+Environnement,DRIEE Ile-de-France,Réglementation environnementale et risques,http://ws.carmen.developpement-durable.gouv.fr/ATOM/18/donnees_publiques_IDF.atom,Accès Libre,libre,Île-de-France,non
+Environnement,georisques.fr,Nombre de cavités souterraines par commune,http://www.georisques.gouv.fr/dossiers/telechargement,Accès Libre,libre,Paris Seine Normandie,oui
+Environnement,georisques.fr,Zones inondables,http://www.georisques.gouv.fr/dossiers/telechargement,Accès Libre,libre,Paris Seine Normandie,oui
+Environnement,nosDonnées.fr,Nucléaire,https://www.data.gouv.fr/fr/datasets/liste-des-reacteurs-nucleaires-en-france-nd/,Accès Libre,libre,Paris Seine Normandie,oui
+Environnement,Météo France,Météorologie à la station,https://donneespubliques.meteofrance.fr/?fond=produit&id_produit=115&id_rubrique=38,Accès Libre,libre,Paris Seine Normandie,oui
+Environnement,OpenStreetMap,Parcs naturels nationaux et régionaux,openstreetmap.org,Accès Libre,libre,Paris Seine Normandie,oui
+Environnement,INPN,Zones protégées Natura 2000,https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-natura-2000/ ,Accès Libre,libre,Paris Seine Normandie,oui
+Environnement,Etalab,Bornes de Recharge pour Véhicules Électriques ,https://www.data.gouv.fr/fr/datasets/fichier-consolide-des-bornes-de-recharge-pour-vehicules-electriques-irve/,Accès Libre,libre,Paris Seine Normandie,oui
 Foncier,Cadre de ville,Carte des ventes de fonciers par commune,https://www.cadredeville.com/NewsRecentes/ile-de-france-toutes-les-ventes-de-fonciers-batis-et-non-batis-par-commune,Identifié et payant,Accès payant,Île-de-France,non
 Foncier,AURH,Aménagement,https://www.aurh.fr/nos-ressources/sig/,Identifié et non accessible,aucun accès connu,Bassin du Havre,non
 Foncier,CEREMA,marché fonciers et immobiliers,https://www.cerema.fr/fr/actualites/cerema-concu-appdvf-application-gratuite-collectivites-afin-0,Identifié et non accessible,aucun accès connu,Paris Seine Normandie,non

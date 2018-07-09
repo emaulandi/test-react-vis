@@ -85,7 +85,7 @@ export	const month = ['Janvier','Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Jui
 export	const monthNum = ['01','02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
 export const IDregionPSN = ['11','28'];
 
-export const colorDomainCategories = ['Tissu économique', 'Transport', 'Tourisme', 'Télécommunications', 'Foncier', 'Logistique', 'Énergie', 'Environnement et risques'];
+export const colorDomainCategories = ['Tissu économique', 'Transport', 'Tourisme', 'Télécommunications', 'Foncier', 'Logistique', 'Énergie', 'Environnement'];
 export const colorValuesCategories = ['#95C11F','#F7A600','#919188', '#8080ff' ,"#cb3434",'#ff7733','#cc6699', '#e6e600'];
 
 
